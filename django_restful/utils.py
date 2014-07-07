@@ -6,8 +6,6 @@ from django_restful import strings
 
 
 def render_as_json(document, indent=4):
-    if type(indent) == int:
-        indent = ' ' * indent
     encoder = RESTfulJSONEncoder(indent=indent)
     return encoder.encode(document)
 
