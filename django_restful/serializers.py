@@ -2,7 +2,7 @@ import datetime
 import decimal
 from rfc3339 import rfc3339
 from django.utils import datetime_safe
-from django.utils.simplejson import JSONEncoder
+from json import JSONEncoder
 
 class RESTfulJSONEncoder(JSONEncoder):
     """
