@@ -23,8 +23,10 @@ class ResourceView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         # Force a language if the settings require it
-        if django_restful_settings.REST_FORCE_LANGUAGE:
-            translation.activate(django_restful_settings.REST_DEFAULT_LANGUAGE)
+        if django_restful_settings.DJANGO_RESTFUL_FORCE_LANGUAGE:
+            translation.activate(
+                django_restful_settings.DJANGO_RESTFUL_DEFAULT_LANGUAGE
+            )
         # Handling additional HTTP verbs
         for m in self.extend_known_methods():
             if m not in self.additional_http_method_names:
