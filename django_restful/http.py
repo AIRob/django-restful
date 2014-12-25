@@ -36,3 +36,40 @@ class HttpResponseFieldValidationError(HttpResponse):
 class HttpResponseInternalServerError(HttpResponse):
     status_code = 500
 
+class MultiMessagesException(Exception):
+    def __init__(self, messages=[], *args, **kargs):
+        super(MultiMessagesException, self).__init__(*args, **kargs)
+        self.messages = messages
+
+class Http400MM(MultiMessagesException):
+    pass
+
+class Http401MM(MultiMessagesException):
+    pass
+
+class Http402MM(MultiMessagesException):
+    pass
+
+class Http403MM(MultiMessagesException):
+    pass
+
+class Http404MM(MultiMessagesException):
+    pass
+
+class Http405MM(MultiMessagesException):
+    pass
+
+class Http406MM(MultiMessagesException):
+    pass
+
+class Http407MM(MultiMessagesException):
+    pass
+
+class Http408MM(MultiMessagesException):
+    pass
+
+class Http409MM(MultiMessagesException):
+    pass
+
+class Http410MM(MultiMessagesException):
+    pass
